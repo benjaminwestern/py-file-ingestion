@@ -143,8 +143,11 @@ def process_files(directory: str, mapping_file: str, project_id: str, dataset_id
             for idx in range(len(new_df)):
                 row_dict = new_df.iloc[idx].to_dict()
                 for key in row_dict:
-                    if pd.isna(row_dict[key]) and key not in ['BQInsertedDate', 'SourceFile']:
-                        row_dict[key] = None
+                    if key not in ['BQInsertedDate', 'SourceFile', 'Attributes']:
+                        if isinstance(row_dict[key], pd.Series) or isinstance(row_dict[key], pd.DataFrame):
+                            row_dict[key] = None
+                        elif pd.isna(row_dict[key]):
+                            row_dict[key] = None
                 json_rows.append(row_dict)
             
             job_config = bigquery.LoadJobConfig(
