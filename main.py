@@ -106,7 +106,7 @@ def process_files(directory: str, mapping_file: str, project_id: str, dataset_id
             new_df['SourceCreatedDate'] = pd.Timestamp.now().strftime('%Y-%m-%d %H:%M:%S')
             new_df['SourceModifiedDate'] = pd.Timestamp.now().strftime('%Y-%m-%d %H:%M:%S')
             new_df['SourceFile'] = filename
-            new_df['BQInsertedDate'] = pd.Timestamp.now()
+            new_df['BQInsertedDate'] = pd.Timestamp.now().strftime('%Y-%m-%d %H:%M:%S')
             new_df['Id'] = None
             new_df['FirstName'] = None
             new_df['LastName'] = None
