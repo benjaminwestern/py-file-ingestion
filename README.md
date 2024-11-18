@@ -215,6 +215,14 @@ Generates a JSON file containing:
 - Cannot handle nested attribute structures
 - Maximum of 1000 attributes per row (BigQuery limitation)
 
+## Future Enhancements / Roadmap / Ideas
+- [ ] Pre-Validate file formatting before processing (e.g., incorrect data layout, nested new lines, bad characters, non-UTF-8 encoding, etc.)
+- [ ] Support for nested attribute structures (e.g., JSON objects)
+- [ ] Enhanced error handling and reporting (e.g., error log files for each file and detailed error messages)
+- [ ] Support for additional source system (e.g., Google Cloud Storage)
+- [ ] Support for default data definitions for common source systems (e.g., Salesforce, HubSpot)
+- [ ] Support for best match data definition based on existing YAML / JSON mappings (e.g., Provide random CSV file and get best match data definition, column mapping, and attribute mapping, then allow the user to decide if they want to use it or not)
+
 ## License
 This repository is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
